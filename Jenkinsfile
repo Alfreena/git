@@ -33,7 +33,7 @@ pipeline {
                 //     "
                 //     '''
                 echo "Starting application locally..."
-                bat 'nohup python app.py > app.log 2>&1 &'
+                bat 'start /B python app.py > app.log 2>&1 '
             }
         }
     }
