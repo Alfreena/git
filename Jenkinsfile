@@ -34,7 +34,6 @@ pipeline {
                 //     '''
                 echo "Starting application locally..."
                 sh 'nohup python app.py > app.log 2>&1 &'
-                }
             }
         }
     }
