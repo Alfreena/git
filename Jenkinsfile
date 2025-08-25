@@ -23,15 +23,17 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sshagent(['your-ssh-credential-id']) {
-                    sh '''
-                    ssh user@your-server-ip "
-                        cd /var/www/myapp &&
-                        git pull origin main &&
-                        docker-compose down &&
-                        docker-compose up -d --build
-                    "
-                    '''
+                // sshagent(['my-ssh-key']) {
+                //     sh '''
+                //     ssh user@your-server-ip "
+                //         cd /var/www/myapp &&
+                //         git pull origin main &&
+                //         docker-compose down &&
+                //         docker-compose up -d --build
+                //     "
+                //     '''
+                echo "Starting application locally..."
+                sh 'nohup python app.py > app.log 2>&1 &'
                 }
             }
         }
