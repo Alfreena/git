@@ -18,7 +18,7 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'echo "Running tests..."'
-                bat 'C:\Users\alfre\Python\Python313\Scripts\pytest.exe'
+                bat 'C:/Users/alfre/Python/Python313/Scripts/pytest.exe'
             }
         }
         stage('Deploy') {
