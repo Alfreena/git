@@ -18,7 +18,7 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'echo "Running tests..."'
-                bat 'pytest'
+                bat 'C:\Users\alfre\Python\Python313\Scripts\pytest.exe'
             }
         }
         stage('Deploy') {
@@ -29,7 +29,7 @@ pipeline {
                 //         cd /var/www/myapp &&
                 //         git pull origin main &&
                 //         docker-compose down &&
-                //         docker-compose up -d --build
+                //         docker-compose up -d --build  
                 //     "
                 //     '''
                 echo "Starting application locally..."
