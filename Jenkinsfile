@@ -11,14 +11,14 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'echo "Building application..."'
-                sh 'pip install -r requirements.txt'
+                bat 'echo "Building application..."'
+                bat 'pip install -r requirements.txt'
             }
         }
         stage('Test') {
             steps {
-                sh 'echo "Running tests..."'
-                sh 'pytest'
+                bat 'echo "Running tests..."'
+                bat 'pytest'
             }
         }
         stage('Deploy') {
@@ -33,7 +33,7 @@ pipeline {
                 //     "
                 //     '''
                 echo "Starting application locally..."
-                sh 'nohup python app.py > app.log 2>&1 &'
+                bat 'nohup python app.py > app.log 2>&1 &'
             }
         }
     }
